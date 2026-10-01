@@ -56,38 +56,55 @@ export async function GET() {
     await dbConnect();
     const rows = await AutoApplyJob.find({}).sort({ updatedAt: -1 }).lean();
 
-    // Enrich with postedAt from Job collection (case-insensitive URL match)
+    // Enrich with postedAt, category, categoryLabel from Job collection (case-insensitive URL match)
     const jobUrls = [...new Set(rows.map((r) => String(r.jobUrl || "").trim()).filter(Boolean))];
 
     const postedAtMap = new Map<string, string>();
+    const categoryMap = new Map<string, { category: string; categoryLabel: string }>();
 
     if (jobUrls.length > 0) {
       // 1. Exact match first (fast path)
       const exactDocs = await Job.find(
         { applyLink: { $in: jobUrls } },
-        { applyLink: 1, postedAt: 1 }
+        { applyLink: 1, postedAt: 1, category: 1, categoryLabel: 1 }
       ).lean();
       for (const doc of exactDocs) {
-        const pa = doc.postedAt ? new Date(doc.postedAt).toISOString() : "";
-        if (!pa) continue;
         const key = String(doc.applyLink || "").trim().toLowerCase();
-        if (key && !postedAtMap.has(key)) postedAtMap.set(key, pa);
+        if (!key) continue;
+
+        if (doc.postedAt && !postedAtMap.has(key)) {
+          postedAtMap.set(key, new Date(doc.postedAt).toISOString());
+        }
+        if (!categoryMap.has(key) && (doc.category || doc.categoryLabel)) {
+          categoryMap.set(key, {
+            category: String(doc.category || "others"),
+            categoryLabel: String(doc.categoryLabel || "Others"),
+          });
+        }
       }
 
       // 2. Case-insensitive fallback for any still missing
-      const stillMissing = jobUrls.filter((u) => !postedAtMap.has(u.toLowerCase()));
+      const stillMissing = jobUrls.filter((u) => !postedAtMap.has(u.toLowerCase()) || !categoryMap.has(u.toLowerCase()));
       if (stillMissing.length > 0) {
         const ciDocs = await Job.find(
           {
             applyLink: { $in: stillMissing.map((u) => new RegExp(`^${u.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i")) },
           },
-          { applyLink: 1, postedAt: 1 }
+          { applyLink: 1, postedAt: 1, category: 1, categoryLabel: 1 }
         ).lean();
         for (const doc of ciDocs) {
-          const pa = doc.postedAt ? new Date(doc.postedAt).toISOString() : "";
-          if (!pa) continue;
           const key = String(doc.applyLink || "").trim().toLowerCase();
-          if (key && !postedAtMap.has(key)) postedAtMap.set(key, pa);
+          if (!key) continue;
+
+          if (doc.postedAt && !postedAtMap.has(key)) {
+            postedAtMap.set(key, new Date(doc.postedAt).toISOString());
+          }
+          if (!categoryMap.has(key) && (doc.category || doc.categoryLabel)) {
+            categoryMap.set(key, {
+              category: String(doc.category || "others"),
+              categoryLabel: String(doc.categoryLabel || "Others"),
+            });
+          }
         }
       }
     }
@@ -166,10 +183,16 @@ export async function GET() {
       }
     }
 
-    const enriched = rows.map((r) => ({
-      ...r,
-      postedAt: postedAtMap.get(String(r.jobUrl || "").trim().toLowerCase()) ?? null,
-    }));
+    const enriched = rows.map((r) => {
+      const key = String(r.jobUrl || "").trim().toLowerCase();
+      const catInfo = categoryMap.get(key);
+      return {
+        ...r,
+        category: r.category || catInfo?.category || "others",
+        categoryLabel: r.categoryLabel || catInfo?.categoryLabel || "Others",
+        postedAt: postedAtMap.get(key) ?? null,
+      };
+    });
 
     // Calculate Resume Ready stats for failed, skipped, and pending jobs
     const totalPreGeneratedResumes = await ResumeDashboardItem.countDocuments({ mode: "autoApply" });

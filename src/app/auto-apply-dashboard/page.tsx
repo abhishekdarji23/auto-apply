@@ -11,6 +11,8 @@ type TrackRow = {
   jobId: string;
   title: string;
   company: string;
+  category?: string;
+  categoryLabel?: string;
   jobUrl: string;
   atsId: string;
   appliedEmail: string;
@@ -34,7 +36,8 @@ const STATUS_LABELS: Record<TrackStatus, string> = {
 const COLUMN_CONFIG = [
   { key: "index", label: "#", defaultWidth: 72, minWidth: 56, sortable: false },
   { key: "job", label: "Job", defaultWidth: 320, minWidth: 220, sortable: true },
-  { key: "company", label: "Company", defaultWidth: 220, minWidth: 160, sortable: true },
+  { key: "company", label: "Company", defaultWidth: 200, minWidth: 140, sortable: true },
+  { key: "category", label: "Category", defaultWidth: 180, minWidth: 130, sortable: true },
   { key: "ats", label: "ATS", defaultWidth: 110, minWidth: 90, sortable: true },
   { key: "email", label: "Email Used", defaultWidth: 260, minWidth: 180, sortable: true },
   { key: "resume", label: "Resume Preview", defaultWidth: 160, minWidth: 130, sortable: false },
@@ -45,7 +48,7 @@ const COLUMN_CONFIG = [
 ] as const;
 
 type ColumnKey = (typeof COLUMN_CONFIG)[number]["key"];
-type SortableKey = "job" | "company" | "ats" | "email" | "postedAt" | "appliedAt" | "status";
+type SortableKey = "job" | "company" | "category" | "ats" | "email" | "postedAt" | "appliedAt" | "status";
 type SortDir = "asc" | "desc";
 
 const DEFAULT_COLUMN_WIDTHS: Record<ColumnKey, number> = COLUMN_CONFIG.reduce((acc, column) => {
@@ -72,6 +75,7 @@ export default function AutoApplyDashboardPage() {
   const [emailFilter, setEmailFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | TrackStatus>("all");
   const [atsFilter, setAtsFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
   const [sortKey, setSortKey] = useState<SortableKey>("appliedAt");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
   const [applying, setApplying] = useState(false);
@@ -81,6 +85,15 @@ export default function AutoApplyDashboardPage() {
     const seen = new Set<string>();
     for (const row of rows) {
       if (row.atsId) seen.add(row.atsId);
+    }
+    return Array.from(seen).sort();
+  }, [rows]);
+
+  const categoryOptions = useMemo(() => {
+    const seen = new Set<string>();
+    for (const row of rows) {
+      const label = row.categoryLabel || "Others";
+      if (label) seen.add(label);
     }
     return Array.from(seen).sort();
   }, [rows]);
@@ -100,9 +113,10 @@ export default function AutoApplyDashboardPage() {
       const emailMatches = !emailFilter.trim() || row.appliedEmail.toLowerCase().includes(emailFilter.trim().toLowerCase());
       const statusMatches = statusFilter === "all" || row.status === statusFilter;
       const atsMatches = atsFilter === "all" || row.atsId === atsFilter;
-      return titleMatches && companyMatches && emailMatches && statusMatches && atsMatches;
+      const categoryMatches = categoryFilter === "all" || (row.categoryLabel || "Others") === categoryFilter;
+      return titleMatches && companyMatches && emailMatches && statusMatches && atsMatches && categoryMatches;
     });
-  }, [rows, titleFilter, companyFilter, emailFilter, statusFilter, atsFilter]);
+  }, [rows, titleFilter, companyFilter, emailFilter, statusFilter, atsFilter, categoryFilter]);
 
   const sortedRows = useMemo(() => {
     const copy = [...filteredRows];
@@ -115,6 +129,9 @@ export default function AutoApplyDashboardPage() {
       } else if (sortKey === "company") {
         aVal = (a.company ?? "").toLowerCase();
         bVal = (b.company ?? "").toLowerCase();
+      } else if (sortKey === "category") {
+        aVal = (a.categoryLabel || a.category || "Others").toLowerCase();
+        bVal = (b.categoryLabel || b.category || "Others").toLowerCase();
       } else if (sortKey === "ats") {
         aVal = (a.atsId ?? "").toLowerCase();
         bVal = (b.atsId ?? "").toLowerCase();
@@ -378,7 +395,7 @@ export default function AutoApplyDashboardPage() {
         </div>
 
         <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-4">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-3">
             <input
               value={titleFilter}
               onChange={(e) => setTitleFilter(e.target.value)}
@@ -391,6 +408,16 @@ export default function AutoApplyDashboardPage() {
               placeholder="Filter by company"
               className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-3 py-2 text-sm"
             />
+            <select
+              value={categoryFilter}
+              onChange={(e) => setCategoryFilter(e.target.value)}
+              className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-3 py-2 text-sm"
+            >
+              <option value="all">All categories</option>
+              {categoryOptions.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
             <input
               value={emailFilter}
               onChange={(e) => setEmailFilter(e.target.value)}
@@ -462,13 +489,13 @@ export default function AutoApplyDashboardPage() {
             <tbody>
               {loading ? (
                 <tr>
-                  <td colSpan={10} className="px-3 py-10 text-center text-neutral-500">
+                  <td colSpan={11} className="px-3 py-10 text-center text-neutral-500">
                     <span className="inline-flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> Loading…</span>
                   </td>
                 </tr>
               ) : filteredRows.length === 0 ? (
                 <tr>
-                  <td colSpan={10} className="px-3 py-10 text-center text-neutral-500">No tracked auto-apply jobs found.</td>
+                  <td colSpan={11} className="px-3 py-10 text-center text-neutral-500">No tracked auto-apply jobs found.</td>
                 </tr>
               ) : (
                 sortedRows.map((row, idx) => {
@@ -487,6 +514,9 @@ export default function AutoApplyDashboardPage() {
                         </a>
                       </td>
                       <td className="px-3 py-2">{row.company || "—"}</td>
+                      <td className="px-3 py-2">
+                        <CategoryBadge label={row.categoryLabel || "Others"} category={row.category} />
+                      </td>
                       <td className="px-3 py-2 uppercase">{row.atsId || "—"}</td>
                       <td className="px-3 py-2 break-all">{row.appliedEmail || "—"}</td>
                       <td className="px-3 py-2">
@@ -588,6 +618,23 @@ function StatusBadge({ status }: { status: TrackStatus }) {
     return <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Skipped</span>;
   }
   return <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Running</span>;
+}
+
+function CategoryBadge({ label, category }: { label: string; category?: string }) {
+  const catLabel = label || "Others";
+  const isOthers = !category || category === "others" || catLabel === "Others";
+
+  return (
+    <span
+      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium truncate max-w-full ${
+        isOthers
+          ? "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+          : "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/40"
+      }`}
+    >
+      {catLabel}
+    </span>
+  );
 }
 
 function StatCard({

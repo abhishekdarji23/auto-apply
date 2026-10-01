@@ -157,6 +157,8 @@ export async function saveAutoApplyTracking(params: {
     {
       title: 1,
       company: 1,
+      category: 1,
+      categoryLabel: 1,
       jobId: 1,
       jobrightId: 1,
       jobrightAliases: 1,
@@ -168,6 +170,8 @@ export async function saveAutoApplyTracking(params: {
 
   const resolvedTitle = safeString(jobDocByUrl?.title);
   const resolvedCompany = safeString(jobDocByUrl?.company);
+  const resolvedCategory = safeString(jobDocByUrl?.category) || "others";
+  const resolvedCategoryLabel = safeString(jobDocByUrl?.categoryLabel) || "Others";
   const resolvedJobId = jobDocByUrl?.jobId ? safeString(jobDocByUrl.jobId) : (jobId || "");
 
   const profile = await fetchCandidateProfileByJobUrl({ origin, jobUrl });
@@ -244,6 +248,8 @@ export async function saveAutoApplyTracking(params: {
         jobId: resolvedJobId || existing?.jobId || "",
         title: resolvedTitle || existing?.title || "",
         company: resolvedCompany || existing?.company || "",
+        category: resolvedCategory || existing?.category || "others",
+        categoryLabel: resolvedCategoryLabel || existing?.categoryLabel || "Others",
         jobUrl,
         atsId: atsId || existing?.atsId || "",
         appliedEmail,

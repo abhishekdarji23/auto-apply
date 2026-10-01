@@ -8,6 +8,8 @@ export interface IAutoApplyJob extends Document {
   jobId: string;
   title: string;
   company: string;
+  category?: string;
+  categoryLabel?: string;
   jobUrl: string;
   atsId: string;
   appliedEmail: string;
@@ -26,6 +28,8 @@ const AutoApplyJobSchema = new Schema<IAutoApplyJob>(
     jobId: { type: String, default: "", index: true },
     title: { type: String, default: "" },
     company: { type: String, default: "" },
+    category: { type: String, default: "others", index: true },
+    categoryLabel: { type: String, default: "Others" },
     jobUrl: { type: String, required: true, index: true },
     atsId: { type: String, default: "" },
     appliedEmail: { type: String, default: "" },
