@@ -1,0 +1,22 @@
+{
+  "name": "Candidate Example",
+  "candidate_id": "sample-candidate-id",
+  "file_name": "Candidate_Example.pdf",
+  "generated": false,
+  "default": true,
+  "resume_download": "",
+  "resume_preview": "",
+  "resume": "",
+  "skills_names": [],
+  "experience1_id": null,
+  "experience1_title": null,
+  "experience1_description": null,
+  "tracked_obj": null,
+  "meta": {},
+  "public": false,
+  "id": "sample-resume-id",
+  "date_generated": "2026-01-01T00:00:00.000Z",
+  "date_last_edited": "2026-01-01T00:00:00.000Z",
+  "score": null,
+  "job_posting": null
+}

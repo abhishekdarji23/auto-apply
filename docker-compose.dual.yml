@@ -1,0 +1,25 @@
+services:
+  jobtrack_a:
+    image: jobtrack:local
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - BRAVE_CDP_URL=http://host.docker.internal:9222
+
+  jobtrack_b:
+    image: jobtrack:local
+    restart: always
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - BRAVE_CDP_URL=http://host.docker.internal:9222

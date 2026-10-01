@@ -1,0 +1,207 @@
+{
+  "credentials": {
+    "email": "",
+    "password": "",
+    "FallbackPassword": ""
+  },
+  "candidate_profile": {
+    "identity": {
+      "full_name": "John Doe",
+      "preferred_name": "john",
+      "middle_initial": null,
+      "legal_first_name": "john",
+      "legal_last_name": "Doe",
+      "email": "johndoe@example.com",
+      "phone": "+1",
+      "linkedin": "https://www.linkedin.com/in/johndoe",
+      "github": "https://github.com/johndoe",
+      "portfolio": null,
+      "website": null,
+      "pronouns": "He/him",
+      "age_18_or_over": true,
+      "birthday": "2003-03-23",
+      "sexual_orientation": "Heterosexual",
+      "gender": "Male",
+      "race": "Asian",
+      "ethnicity": "Indian",
+      "disability_status": "None",
+      "veteran_status": "Not a veteran",
+      "armed_forces_service": false,
+      "hispanic_latino_origin": false,
+      "hispanic_latino_details": null
+    },
+    "location": {
+      "current_city": "San Jose",
+      "current_county": "Santa Clara",
+      "current_state": "CA",
+      "current_country": "USA",
+      "zip_code": "95110",
+      "full_address": "328 N MARKET ST, #138, San Jose, CA 95110, USA",
+      "timezone": "America/Los_Angeles",
+      "is_us_based": true,
+      "is_outside_us": false,
+      "open_to_relocate": true,
+      "can_self_relocate": true,
+      "needs_relocation_assistance": false,
+      "open_to_onsite": true,
+      "open_to_hybrid": true,
+      "open_to_remote": true,
+      "preferred_locations": [
+        "San Jose, CA",
+        "San Francisco, CA",
+        "California, USA",
+        "Open to all U.S. locations"
+      ],
+      "can_commute_daily": true,
+      "travel_willingness": "open_based_on_role",
+      "travel_percentage_willingness": 50
+    },
+    
+  "work_authorization": {
+    "country": "US",
+    "authorized_to_work_now": true,
+    "requires_sponsorship_now": false,
+    "requires_sponsorship_future": false,
+    "requires_cpt_opt_support": false,
+    "requires_stem_opt_support": false,
+    "current_visa_status": "F-1",
+    "visa_expiration_date": "2030-05-15",
+    "work_authorization_details": "Currently on F-1 student visa. Authorized to work in the U.S.",
+    "us_person_status": "non_us_person",
+    "citizenship_country": "India",
+    "permanent_residency_country": "India",
+    "dual_citizenship_countries": [],
+    "export_control_restriction": false,
+    "extra_note": "If any question asks whether the candidate requires sponsorship now, in the future, now or in the future, or any other type of employment sponsorship or visa sponsorship, always answer No."
+  },
+
+    "education": {
+      "currently_student": true,
+      "school_name": "San Jose State University",
+      "school_city": "San Jose",
+      "school_state": "CA",
+      "degree_level": "Master's",
+      "major": "Computer Software Engineering",
+      "searchQuery": "nirma",
+      "edu1_major": "Computer Software Engineering",
+      "edu2_major": "Computer Science And Engineering",
+      "minor": null,
+      "gpa": "3.77",
+      "graduation_month": "05",
+      "graduation_year": "2027",
+      "graduation_date": "2027-05-20",
+      "class_level": "Master's student",
+      "enrollment_status": "Full-time",
+      "will_return_to_school_after_internship": true,
+      "student_email": "john@example.com"
+    },
+    "employment": {
+      "currently_employed": false,
+      "current_employer": null,
+      "current_title": "Student",
+      "most_recent_employer": "GreatBear",
+      "most_recent_title": "Software Engineer",
+      "previous_employers": [
+        "GreatBear",
+        "Flourish Creations"
+      ],
+      "years_total_experience": 1.75,
+      "years_full_time_experience": 1.0,
+      "years_internship_experience": 0.75,
+      "notice_period": "None",
+      "earliest_start_date": "2026-05-25",
+      "available_full_time_40h": true
+    },
+    "availability": {
+      "available_start_date": "2026-05-25",
+      "available_end_date": "2026-08-18",
+      "available_for_summer_internship": true,
+      "available_for_full_program_dates": true,
+      "hours_per_week": 40,
+      "unavailable_dates": [],
+      "internship_duration_weeks": "12",
+      "available_immediately": true
+    },
+    "compensation": {
+    "desired_hourly_rate": "30",
+    "desired_salary": "80000",
+    "desired_salary_range": null,
+    "minimum_salary": null,
+    "open_to_market_rate": true,
+    "rules": [
+      "First check whether the job description explicitly mentions compensation or a pay range.",
+      "If the job description gives a compensation range, always choose the minimum value in that range.",
+      "Example: if the job description says 35-50 per hour, answer 35.",
+      "If the job description does not mention compensation, use 30 for hourly-rate questions.",
+      "If the job description does not mention compensation, use 80000 for salary questions.",
+      "If asked whether the candidate is comfortable with a stated salary, range, band, or compensation amount, always answer Yes.",
+      "If the question asks for desired salary and the field is a free-text input, and the prompt does not explicitly say annual, yearly, per year, or salary, answer in hourly terms.",
+      "For such free-text desired salary inputs without an annual time basis, provide the answer as per hour.",
+      "Example: if asked 'Desired salary' in a text input with no annual or yearly wording, answer '30/hr' when no compensation is listed in the job description."
+    ]
+  },
+    "company_history": {
+      "worked_for_target_company_before": false,
+      "worked_for_target_affiliate_before": false,
+      "affiliate_details": [],
+      "applied_to_target_company_before": false,
+      "interviewed_with_target_company_before": false,
+      "used_target_company_product": true,
+      "product_usage_details": "May have used popular products or services from well-known companies when applicable. Dont return this same ans return based on the JD "
+    },
+    "relationships": {
+      "has_referral": false,
+      "referral_name": null,
+      "referral_details": null,
+      "has_relatives_at_target_company": false,
+      "relative_details": [],
+      "has_close_personal_relationship_at_target_company": false,
+      "relationship_details": null
+    },
+    "compliance": {
+      "current_government_employee": false,
+      "former_government_employee_last_5_years": false,
+      "government_official_relationship": false,
+      "government_relationship_details": null,
+      "security_clearance_active": false,
+      "security_clearance_level": null,
+      "eligible_for_clearance": false,
+      "debarred_or_ineligible": false,
+      "non_compete": false,
+      "non_solicit": false,
+      "other_work_restrictions": null,
+      "conflict_of_interest": false,
+      "conflict_details": null
+    },
+    "preferences": {
+      "preferred_work_type": "Full-time internship",
+      "preferred_teams": [],
+      "preferred_roles": [
+        "Software Engineering",
+        "Roles aligned with the job description"
+      ],
+      "preferred_locations": [
+        "San Jose, CA",
+        "San Francisco, CA",
+        "California, USA",
+        "Open to all U.S. locations"
+      ],
+      "future_opportunities_opt_in": false,
+      "sms_opt_in": false,
+      "whatsapp_opt_in": false
+    },
+    "motivation": {
+      "career_goals": "Seeking software engineering opportunities that align with my academic background, prior experience, and the job description. Interested in building impactful, scalable software systems and growing through hands-on engineering work.",
+      "interested_domains": [
+        "Domains aligned with the job description"
+      ],
+      "why_company_general": "Interested in companies where my background, resume, and the role requirements align well. Motivation should be tailored naturally to the company and job description for each application.",
+      "why_role_general": "Interested in roles that match my experience, technical skills, and growth goals. Responses should be tailored naturally to the job description and resume.",
+      "value_proposition_summary": "Graduate software engineering student with prior internship and full-time experience, available for Summer 2026 internships and open to relevant software roles.",
+      "personal_pitch": "Software engineering master's student at San Jose State University with prior industry experience, strong academic performance, and interest in building practical software systems."
+    },
+    "extra":"anything extra says that privacy note or data disclouse anything right tthat allow always yes",
+    "How did you hear about this opportunity?"  : "if LinkedIn choose this from select ot if text type just linkedin or if select from that options choose linkedin or company website or related ",
+    "When would you be available if an offer was accepted?": "immediate"
+  }
+}

@@ -1,0 +1,73 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.next-*/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env.local
+.env.*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+/generated-resumes/
+
+# secrets & credentials — real data files
+data/
+data_*/
+!data_sample/
+!data_sample/**
+
+debug/
+# debug folders/files
+
+# playwright browser data (matches pw-user-data, pw-user-data-0, pw-user-data-1, etc.)
+pw-user-data/
+pw-user-data-*/
+**/pw-user-data/
+**/pw-user-data-*/
+gptService/gpt-playwright-service/pw-user-data/
+gptService/gpt-playwright-service/pw-user-data-*/
+gptService/gpt-playwright-service/latex-resumes/
+gptService/gpt-playwright-service/node_modules/
+
+# secrets & credentials
+client_secret_*.json
+gen-lang-client-*.json
+gen-lang-client.json
+
+temp.json
+
+/backup

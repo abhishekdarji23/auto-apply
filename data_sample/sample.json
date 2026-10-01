@@ -1,0 +1,46 @@
+{
+  "email": "candidate@example.com",
+  "active": true,
+  "first_name": "Candidate",
+  "last_name": "Example",
+  "birthday": "2000-01-01",
+  "phone": "+10000000000",
+  "location": "San Jose, CA, USA",
+  "address": "123 Main St",
+  "address_2": "",
+  "postal_code": "95110",
+  "work_auth_us": true,
+  "sponsorship": true,
+  "gender": "Prefer not to say",
+  "ethnicity": ["South Asian"],
+  "linkedin": "https://www.linkedin.com/in/candidate-example",
+  "github": "https://github.com/candidate-example",
+  "portfolio": "",
+  "default_resume_id": "local-default-resume",
+  "resume_download": "",
+  "resume_preview": "",
+  "resume": "",
+  "education": [
+    {
+      "degree": "Master's",
+      "school": "Example University",
+      "major": "Computer Science",
+      "gpa": "4.0",
+      "start_month": 1,
+      "start_year": 2023,
+      "grad_month": 12,
+      "grad_year": 2024
+    }
+  ],
+  "experience": [
+    {
+      "company": "Example Company",
+      "title": "Software Engineer",
+      "start_month": 1,
+      "start_year": 2025,
+      "end_month": null,
+      "end_year": null,
+      "current": true
+    }
+  ]
+}

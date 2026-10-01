@@ -1,0 +1,4 @@
+Title: AI & Machine Learning Engineer
+Focus: Machine learning models, deep learning architectures, Large Language Model (LLM) integrations, NLP, and data engineering pipelines.
+Core Skills: PyTorch, TensorFlow, Python, LangChain, OpenAI/Gemini APIs, Pandas, NumPy, Scikit-learn, Vector DBs, Hugging Face, MLflow, data modeling.
+When to choose: Select this resume for Machine Learning Engineer, AI Engineer, Data Scientist, NLP Engineer, or LLM Application Developer roles.

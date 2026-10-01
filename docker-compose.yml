@@ -1,0 +1,12 @@
+services:
+  jobtrack:
+    build: .
+    container_name: jobtrack
+    restart: always # auto-start on reboot, restart on crash
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local # put MONGODB_URI (and optional RESUME_BASE_URL) here
+    environment:
+      - NODE_ENV=production
+      - PORT=3000

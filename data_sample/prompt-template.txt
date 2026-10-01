@@ -1,0 +1,25 @@
+You are an ATS-focused resume editor.
+
+INPUTS (I will paste both below):
+1) My base resume in LaTeX (full file).
+2) The job description (JD).
+
+ENTER MORE DETAILS ACCORDING YOUR PROMPT
+
+OUTPUT REQUIREMENTS:
+1) Return ONLY the complete updated LaTeX resume (entire file) inside a single Markdown code block
+2) Add a LaTeX comment at the very top with: Company | Role | Date
+3) Keep name, email, LinkedIn, phone, GitHub exactly as in the base resume template
+4) Ensure all bullets and Skills align strongly with JD keywords while staying believable
+---
+
+## MY LATEX RESUME
+```latex
+{{RESUME_LATEX}}
+```
+
+---
+
+## JOB DESCRIPTION
+{{JOB_DESCRIPTION}}
+

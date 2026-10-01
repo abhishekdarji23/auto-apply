@@ -1,0 +1,425 @@
+[
+  {
+    "id": "adp",
+    "name": "ADP",
+    "urls": [
+      "*://recruiting.adp.com/srccar/public/*",
+      "*://myjobs.adp.com/*/cx/*"
+    ]
+  },
+  {
+    "id": "adp2",
+    "name": "ADP2",
+    "urls": [
+      "*://workforcenow.adp.com/mascsr/*/*/recruitment/*"
+    ]
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "urls": [
+      "*://*.amazon.jobs/*/*"
+    ]
+  },
+  {
+    "id": "amazonuniversity",
+    "name": "AmazonUniversity",
+    "urls": [
+      "*://*.amazonuniversity.jobs/profile*"
+    ]
+  },
+  {
+    "id": "apple",
+    "name": "Apple",
+    "urls": [
+      "*://jobs.apple.com/*/*",
+      "*://jobs.apple.com/app/*/apply/*"
+    ]
+  },
+  {
+    "id": "ashby",
+    "name": "Ashby",
+    "urls": [
+      "*://jobs.ashbyhq.com/*/*/application*"
+    ]
+  },
+  {
+    "id": "avature",
+    "name": "Avature",
+    "urls": [
+      "*://*.avature.net/*/ApplicationForm*",
+      "*://*.avature.net/*/ApplicationMethods*",
+      "*://*.avature.net/*/ApplicationQuestions*",
+      "*://*.avature.net/*/ApplicationReview*",
+      "*://*.avature.net/*/Register*",
+      "*://*.avature.net/campusApply*",
+      "*://*.avature.net/*/GeneralInfo*",
+      "*://*.avature.net/careers/JobDetail/*",
+      "*://*.avature.net/*/careers/JobDetail/*",
+      "*://*.avature.net/*/External/JobDetail*",
+      "*://*.avature.net/careers/LocationAndProfile/*",
+      "*://*.avature.net/*/careers/LocationAndProfile/*",
+      "*://*.avature.net/careers/Success*",
+      "*://*.avature.net/*/careers/Success*",
+      "*://www.bain.com/careers/find-a-role/position/?jobid=*",
+      "*://careers.bain.com/jobs/*",
+      "*://careers.jacobs.com/*/careers/Register*",
+      "*://careers.jacobs.com/*/careers/JobDetail/*"
+    ]
+  },
+  {
+    "id": "bamboohr",
+    "name": "BambooHR",
+    "urls": [
+      "*://*.bamboohr.com/jobs*",
+      "*://*.bamboohr.com/careers*"
+    ]
+  },
+  {
+    "id": "brassring",
+    "name": "BrassRing",
+    "urls": [
+      "*://*/TGnewUI/Search/home/Home*",
+      "*://*/TGnewUI/Search/Home/Home*",
+      "*://*/TGNewUI/Profile/Home/ProfileBuilder*"
+    ]
+  },
+  {
+    "id": "breezyhr",
+    "name": "BreezyHR",
+    "urls": [
+      "*://*.breezy.hr/p/*",
+      "*://*.breezy.hr/*/apply*"
+    ]
+  },
+  {
+    "id": "bytedance",
+    "name": "ByteDance",
+    "urls": [
+      "*://jobs.bytedance.com/*/*/*/detail*",
+      "*://jobs.bytedance.com/*/*/*/apply*",
+      "*://jobs.bytedance.com/*/*/applied*",
+      "*://joinbytedance.com/search/*"
+    ]
+  },
+  {
+    "id": "comeet",
+    "name": "Comeet",
+    "urls": [
+      "*://*.comeet.com/jobs/*/*/*/*",
+      "*://*.comeet.co/jobs/*/*/apply*"
+    ]
+  },
+  {
+    "id": "dayforce",
+    "name": "Dayforce",
+    "urls": [
+      "*://jobs.dayforcehcm.com/*/CANDIDATEPORTAL/jobs/*/apply*",
+      "*://jobs.dayforcehcm.com/*/CANDIDATEPORTAL/jobs/*"
+    ]
+  },
+  {
+    "id": "eightfold",
+    "name": "Eightfold",
+    "urls": [
+      "*://*.eightfold.ai/careers*"
+    ]
+  },
+  {
+    "id": "freshteam",
+    "name": "FreshTeam",
+    "urls": [
+      "*://*.freshteam.com/jobs/*"
+    ]
+  },
+  {
+    "id": "google",
+    "name": "Google",
+    "urls": [
+      "*://*.google.com/about/careers/applications/apply/*"
+    ]
+  },
+  {
+    "id": "greenhouse",
+    "name": "Greenhouse",
+    "urls": [
+      "*://boards.eu.greenhouse.io/*",
+      "*://boards.greenhouse.io/*",
+      "*://job-boards.eu.greenhouse.io/*",
+      "*://job-boards.greenhouse.io/*",
+      "*://*/**gh_jid**",
+      "*://*.coinbase.com/careers/*",
+      "*://*.hubspot.com/careers/*",
+      "*://jobs.dropbox.com/listing/*/apply*"
+    ]
+  },
+  {
+    "id": "homerun",
+    "name": "Homerun",
+    "urls": []
+  },
+  {
+    "id": "icims",
+    "name": "ICIMS",
+    "urls": [
+      "*://*.icims.com/jobs/candidate*",
+      "*://*.icims.com/jobs/*/*/candidate*",
+      "*://*.icims.com/jobs/*/*/form*",
+      "*://*.icims.com/jobs/*/*/questions*",
+      "*://*.icims.com/jobs/*/*/eeo*",
+      "*://*.icims.com/jobs/*/*/job*",
+      "*://*.icims.com/forms*",
+      "*://*.jibeapply.com/jobs/candidate*",
+      "*://*.jibeapply.com/jobs/*/*/candidate*",
+      "*://*.jibeapply.com/jobs/*/*/form*",
+      "*://*.jibeapply.com/jobs/*/*/questions*",
+      "*://*.jibeapply.com/jobs/*/*/eeo*",
+      "*://*.jibeapply.com/jobs/*/*/job*",
+      "*://*.jibeapply.com/forms*"
+    ]
+  },
+  {
+    "id": "ibm",
+    "name": "IBM",
+    "urls": [
+      "*://careers.ibm.com/job/*",
+      "*://careers.ibm.com/apply/join/?job=*"
+    ]
+  },
+  {
+    "id": "indeed",
+    "name": "Indeed",
+    "urls": [
+      "*://smartapply.indeed.com/beta/indeedapply/form/*"
+    ]
+  },
+  {
+    "id": "jazzhr",
+    "name": "JazzHR",
+    "urls": [
+      "*://*.applytojob.com/apply/*/*"
+    ]
+  },
+  {
+    "id": "jobscore",
+    "name": "JobScore",
+    "urls": [
+      "*://careers.jobscore.com/apply_flow/*",
+      "*://careers.jobscore.com/careers/*/jobs/*",
+      "*://careers.jobscore.com/*/*/*apply*job_id=*"
+    ]
+  },
+  {
+    "id": "jobvite",
+    "name": "Jobvite",
+    "urls": [
+      "*://jobs.jobvite.com/*/job/*",
+      "*://jobs.jobvite.com/*/apply*"
+    ]
+  },
+  {
+    "id": "lever",
+    "name": "Lever",
+    "urls": [
+      "*://jobs.lever.co/*/*",
+      "*://jobs.eu.lever.co/*/*",
+      "*://*/*?LeverAppId=*"
+    ]
+  },
+  {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "urls": [
+      "*://*.linkedin.com/jobs/*currentJobId=*"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "urls": [
+      "*://*.facebookcareers.com/*",
+      "*://*.metacareers.com/*"
+    ]
+  },
+  {
+    "id": "netflix",
+    "name": "Netflix",
+    "urls": [
+      "*://explore.jobs.netflix.net/careers*"
+    ]
+  },
+  {
+    "id": "okta",
+    "name": "Okta",
+    "urls": [
+      "*://www.okta.com/company/careers/*/*"
+    ]
+  },
+  {
+    "id": "oraclecloud",
+    "name": "OracleCloud",
+    "urls": [
+      "*://*.oraclecloud.com/*/CandidateExperience/*/sites/*/*/preview/*",
+      "*://*.oraclecloud.com/*/CandidateExperience/*/sites/*/job/*",
+      "*://*/*/CandidateExperience/*/sites/*/*/preview/*",
+      "*://*/*/CandidateExperience/*/sites/*/job/*",
+      "*://*/*/sites/*/jobs/preview/*/apply/*"
+    ]
+  },
+  {
+    "id": "paylocity",
+    "name": "Paylocity",
+    "urls": [
+      "*://*.paylocity.com/recruiting/*",
+      "*://*.paylocity.com/Recruiting/*"
+    ]
+  },
+  {
+    "id": "phenompeople",
+    "name": "PhenomPeople",
+    "urls": []
+  },
+  {
+    "id": "pinpoint",
+    "name": "Pinpoint",
+    "urls": [
+      "*://*.pinpointhq.com/*/postings/*",
+      "*://*.pinpointhq.com/postings/*"
+    ]
+  },
+  {
+    "id": "polymer",
+    "name": "Polymer",
+    "urls": [
+      "*://jobs.polymer.co/*/*"
+    ]
+  },
+  {
+    "id": "recruitee",
+    "name": "Recruitee",
+    "urls": [
+      "*://*.recruitee.com/*/*"
+    ]
+  },
+  {
+    "id": "rippling",
+    "name": "Rippling",
+    "urls": [
+      "*://*.rippling-ats.com/job/*/*",
+      "*://*.rippling-ats.com/jobs/eop_survey/*",
+      "*://ats.rippling.com/*/jobs/*"
+    ]
+  },
+  {
+    "id": "roblox",
+    "name": "Roblox",
+    "urls": [
+      "*://jobs.roblox.com/careers*",
+      "*://careers.roblox.com/jobs/*"
+    ]
+  },
+  {
+    "id": "smartrecruiters",
+    "name": "SmartRecruiters",
+    "urls": [
+      "*://jobs.smartrecruiters.com/oneclick-ui/company/*",
+      "*://jobs.smartrecruiters.com/*/*"
+    ]
+  },
+  {
+    "id": "successfactors",
+    "name": "SuccessFactors",
+    "urls": [
+      "*://*.successfactors.com/*",
+      "*://*.successfactors.eu/*",
+      "*://*.sapsf.com/career?*",
+      "*://*.sapsf.com/portalcareer?_s.crb=*",
+      "*://*.ns2cloud.com/career?*",
+      "*://*.ns2cloud.com/portalcareer?_s.crb=*"
+    ]
+  },
+  {
+    "id": "taleo",
+    "name": "Taleo",
+    "urls": [
+      "*://*.taleo.net/*/application.jss*",
+      "*://*.taleo.net/*/flow.jsf*",
+      "*://*.taleo.net/*/jobapply*",
+      "*://*.taleo.net/*/ats/careers/*",
+      "*://*.taleo.net/*/htmlResourceViewer.jss*"
+    ]
+  },
+  {
+    "id": "talnet",
+    "name": "TalNet",
+    "urls": [
+      "*://*.tal.net/**/opp/**",
+      "*://*.tal.net/**/candidate*"
+    ]
+  },
+  {
+    "id": "teamtailor",
+    "name": "Teamtailor",
+    "urls": []
+  },
+  {
+    "id": "tesla",
+    "name": "Tesla",
+    "urls": [
+      "*://*.tesla.com/careers/*"
+    ]
+  },
+  {
+    "id": "trinethire",
+    "name": "TriNetHire",
+    "urls": [
+      "*://app.trinethire.com/companies/*/jobs/*"
+    ]
+  },
+  {
+    "id": "uber",
+    "name": "Uber",
+    "urls": [
+      "*://*.uber.com/careers/apply*"
+    ]
+  },
+  {
+    "id": "ultipro",
+    "name": "Ultipro",
+    "urls": [
+      "*://*.ultipro.com/*/JobBoard/*/Account/Register*",
+      "*://*.ultipro.com/*/JobBoard/*/OpportunityApply*",
+      "*://*.ultipro.com/*/JobBoard/*/OpportunityDetail*",
+      "*://*.ultipro.ca/*/JobBoard/*/Account/Register*",
+      "*://*.ultipro.ca/*/JobBoard/*/OpportunityApply*",
+      "*://*.ultipro.ca/*/JobBoard/*/OpportunityDetail*",
+      "*://*.rec.pro.ukg.net/*/JobBoard/*/Account/Register*",
+      "*://*.rec.pro.ukg.net/*/JobBoard/*/OpportunityApply*",
+      "*://*.rec.pro.ukg.net/*/JobBoard/*/OpportunityDetail*"
+    ]
+  },
+  {
+    "id": "waymo",
+    "name": "Waymo",
+    "urls": [
+      "*://waymo.com/joinus/*",
+      "*://careers.withwaymo.com/jobs/*"
+    ]
+  },
+  {
+    "id": "workable",
+    "name": "Workable",
+    "urls": [
+      "*://apply.workable.com/*",
+      "*://jobs.workable.com/search?*selectedJobId=*"
+    ]
+  },
+  {
+    "id": "workday",
+    "name": "Workday",
+    "urls": [
+      "*://*.myworkdayjobs.com/*",
+      "*://*.myworkdaysite.com/*"
+    ]
+  }
+]

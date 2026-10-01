@@ -1,0 +1,4 @@
+Title: Frontend & Full-Stack Web Engineer
+Focus: Modern frontend architecture, responsive web applications, interactive user interfaces, and full-stack integration.
+Core Skills: React, Next.js, TypeScript, JavaScript, HTML5/CSS3, TailwindCSS, Node.js, Express, GraphQL, WebSockets, Jest, UI/UX design.
+When to choose: Select this resume for Frontend Engineer, Full-Stack Developer, Web Application Developer, UI Engineer, or React Developer roles.

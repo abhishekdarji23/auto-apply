@@ -1,0 +1,4 @@
+Title: Backend & Distributed Systems Engineer
+Focus: Backend development, distributed systems, high-concurrency microservices, cloud infrastructure, and database optimization.
+Core Skills: Python, Go, Java, PostgreSQL, MongoDB, Redis, Docker, Kubernetes, AWS, Kafka, gRPC, REST APIs, CI/CD, system design.
+When to choose: Select this resume for Backend Engineer, Distributed Systems Engineer, Cloud Engineer, Infrastructure Engineer, Systems Software Engineer, or API Developer roles.
